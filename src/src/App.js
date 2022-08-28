@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import SignUp from "./components/Register";
 import SignIn from "./components/Login";
+import Home from "./components/Home"
 import { useEffect } from "react";
 import { getUser } from "./state/user";
 import { useDispatch } from "react-redux";
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
+      <Route path="/" element={<Home />} />
         <Route path="/register" element={<SignUp />} />
         <Route path="/login" element={<SignIn />} />
       </Routes>
