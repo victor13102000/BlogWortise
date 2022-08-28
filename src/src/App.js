@@ -1,10 +1,25 @@
-import './styles/App.css'
-import Navbar from './components/Navbar'
+import "./styles/App.css";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import SignUp from "./components/Register";
+import SignIn from "./components/Login";
+import { useEffect } from "react";
+import { getUser } from "./state/user";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
+  
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar />
+      <Routes>
+        <Route path="/register" element={<SignUp />} />
+        <Route path="/login" element={<SignIn />} />
+      </Routes>
     </div>
   );
 }
