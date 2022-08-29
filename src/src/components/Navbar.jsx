@@ -16,9 +16,10 @@ export default function Navbar() {
     e.preventDefault();
     dispatch(postLogoutUser());
   };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar  position="static">
         <Toolbar>
           <Link to="/"><IconButton
             size="large"
@@ -32,14 +33,15 @@ export default function Navbar() {
           </Link>
           
 <>LIST OF USERS</>
-          
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 2 }}
           ></Typography>
-          {user ? (
+          {(user.id) ? (
+          
             <>
+             <>New Post</>
               {" "}
               {user.name}
               <Link to="/">

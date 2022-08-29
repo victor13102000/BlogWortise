@@ -17,12 +17,13 @@ class userController {
         id: user.id,
         posts: user.posts,
       };
-      if (user) res.status(200).send(response);
+      if (user) return res.status(200).send(response);
       res.status(404).send("user not fount");
     } catch (error) {
       res.status(500).send(error);
     }
   };
+
   static getUserByName = async (req, res) => {
     try {
       const user = await User.findAll({
@@ -37,10 +38,9 @@ class userController {
         name: user[0].name,
         lastname: user[0].lastname,
         id: user[0].id,
-        posts: user[0].posts,
       };
 
-      res.status(200).send(response);
+      res.status(200).send([response]);
     } catch (error) {
       res.status(500).send(error);
     }
