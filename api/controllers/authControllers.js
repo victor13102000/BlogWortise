@@ -1,12 +1,18 @@
-const { User } = require("../models");
+const { User, Post } = require("../models");
 const { generateToken } = require("../config/token");
 class AuthController {
   static userLogin = async (req, res) => {
     try {
+      let paylod;
       const { password, email } = req.body;
-      let payload;
 
-      const user = await User.findOne({ where: { email } });
+      const user = await User.findOne({
+        where: { email },
+        include: {
+          model: Post,
+        }
+      });
+
       if (!user) return res.status(401).send("user not found");
 
       const validation = await user.validatePassword(password);
@@ -17,10 +23,11 @@ class AuthController {
         lastname: user.lastname,
         name: user.name,
         email: user.email,
+        posts: user.posts,
       });
-      console.log(token);
+ 
       res.cookie("generatedToken", token);
-      res.status(200).send(payload);
+      res.sendStatus(200)
     } catch (error) {
       res.send(error);
     }

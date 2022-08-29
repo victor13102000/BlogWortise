@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { getUser } from "./state/user";
 import { useDispatch } from "react-redux";
 import Profile from "./components/Profile";
+import MyProfile from "./components/MyProfile"
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
         <Route path="/register" element={<SignUp />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/profile/:id" element={<Profile/>} />
+        <Route path="/myprofile" element={<MyProfile/>} />
       </Routes>
     </div>
   );

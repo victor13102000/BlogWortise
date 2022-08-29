@@ -6,10 +6,11 @@ const {
   deletePost,
   getAllPosts
 } = require("../controllers/postControllers");
+const validateAuth = require("../middlewares/validateAuth");
 
-router.post("/:id", createdPost);
-router.put("/:id", editPost);
-router.delete("/:id", deletePost);
+router.post("/:id",validateAuth, createdPost);
+router.put("/:id", validateAuth, editPost);
+router.delete("/:id",validateAuth, deletePost);
 router.get("/", getAllPosts )
 
 module.exports = router;

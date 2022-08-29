@@ -8,12 +8,17 @@ export const allPost = createAsyncThunk("POSTS", () => {
     .catch((err) => console.log(err));
 });
 
+export const deletePost= async (id)=>{
+  const res = await axios.delete(`/api/post/${id}`)
+  return res
+}
 
 
 const postReducer = createReducer(
   [],
   {
     [allPost.fulfilled]: (state, action) => action.payload,
+    [deletePost.fulfilled]: (state, action) => action.payload,
   }
 );
 
