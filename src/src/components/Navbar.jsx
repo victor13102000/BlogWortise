@@ -31,8 +31,6 @@ export default function Navbar() {
             WortiseBlog
           </IconButton>
           </Link>
-          
-<>LIST OF USERS</>
           <Typography
             variant="h6"
             component="div"
@@ -41,9 +39,12 @@ export default function Navbar() {
           {(user.id) ? (
           
             <>
-             <>New Post</>
               {" "}
-              {user.name}
+              <Link to='/myprofile'><Button  color="inherit">
+                 MY PROFILE
+                </Button>
+              </Link>
+              
               <Link to="/">
                 <Button onClick={handleClick} color="inherit">
                   Logout

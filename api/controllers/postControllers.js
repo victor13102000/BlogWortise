@@ -13,12 +13,19 @@ class postsController {
   };
   static editPost = async (req, res) => {
     try {
-      const postUpdate = await Post.update(req.body, {
+      console.log(req.body)
+      let paylod= {}
+      if(req.body.name!=="") {paylod.name= req.body.name}
+      if(req.body.content!==""){paylod.content= req.body.content}
+
+
+      const postUpdate = await Post.update(paylod, {
         where: { id: req.params.id },
       });
       if (!postUpdate) res.sendStatus(404);
       res.status(200).send("Updated");
     } catch (error) {
+      console.log(error)
       res.status(500).send(error);
     }
   };
@@ -27,7 +34,7 @@ class postsController {
       const destroyPost = await Post.destroy({
         where: { id: req.params.id },
       });
-      if (!destroyPost) res.sendStatus(400);
+      if (!destroyPost) return res.sendStatus(400);
       res.sendStatus(200);
     } catch (error) {
       res.status(500).send(error);

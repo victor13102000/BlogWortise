@@ -11,7 +11,6 @@ export const getUser = createAsyncThunk("USER", () => {
 export const postLoginUser = createAsyncThunk("LOGIN_USER", (userObj) => {
   return axios
     .post("/api/auth/login", userObj, { withCredentials: true })
-    .then((res) => res.data)
     .catch((err) => err.response.data);
 });
 
