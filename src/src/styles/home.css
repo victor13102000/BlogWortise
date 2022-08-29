@@ -1,0 +1,8 @@
+.content{
+    float: left;
+    width: 80%;
+    min-height: 500px;
+    background-color: white;
+    padding: 40px;
+    text-align: left;
+}
