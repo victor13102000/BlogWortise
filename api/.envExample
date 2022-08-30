@@ -1,0 +1,4 @@
+TOKEN_SECRET= palabraSecreta
+DB_NAME= nombreDeLaBaseDeDatos
+PASSWORD_POSTGRES= tuContraseñaPostgres
+USER_POSTGRES= tuUsuarioPostgres

@@ -1,16 +1,14 @@
 const jwt = require("jsonwebtoken");
-const secret= 'adasda'
+const {secretToken}= require('./config')
 
 
 const generateToken = async(payload) => {
-console.log(process.env.SECRETTOKEN)
-  const token = await jwt.sign({ user: payload }, secret , { expiresIn: "2d" });
-  console.log(token)
+  const token = await jwt.sign({ user: payload }, secretToken , { expiresIn: "2d" });
   return token;
 };
 
 const validateToken = (token) => {
-  return jwt.verify(token, secret);
+  return jwt.verify(token, secretToken);
 };
 
 module.exports = { generateToken, validateToken };
