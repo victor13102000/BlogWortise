@@ -13,19 +13,15 @@ class postsController {
   };
   static editPost = async (req, res) => {
     try {
-      console.log(req.body)
       let paylod= {}
       if(req.body.name!=="") {paylod.name= req.body.name}
       if(req.body.content!==""){paylod.content= req.body.content}
-
-
       const postUpdate = await Post.update(paylod, {
         where: { id: req.params.id },
       });
       if (!postUpdate) res.sendStatus(404);
       res.status(200).send("Updated");
     } catch (error) {
-      console.log(error)
       res.status(500).send(error);
     }
   };
@@ -43,7 +39,7 @@ class postsController {
   static getAllPosts = async (req, res) => {
     try {
       const allPost = await Post.findAll({include:User});
-      if (!allPost) res.sendStatus(400);
+      if (!allPost) res.sendStatus(404);
       res.status(200).send(allPost);
     } catch (error) {
       res.status(500).send(error);

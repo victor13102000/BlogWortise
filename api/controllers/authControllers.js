@@ -3,17 +3,13 @@ const { generateToken } = require("../config/token");
 class AuthController {
   static userLogin = async (req, res) => {
     try {
-      let paylod;
       const { password, email } = req.body;
 
       const user = await User.findOne({
-        where: { email },
-        include: {
-          model: Post,
-        }
+        where: { email }
       });
 
-      if (!user) return res.status(401).send("user not found");
+      if (!user) return res.status(404).send("user not found");
 
       const validation = await user.validatePassword(password);
       if (!validation) return res.status(401).send("password invalid");
@@ -22,8 +18,7 @@ class AuthController {
         id: user.id,
         lastname: user.lastname,
         name: user.name,
-        email: user.email,
-        posts: user.posts,
+        email: user.email
       });
  
       res.cookie("generatedToken", token);
@@ -43,7 +38,7 @@ class AuthController {
           email: req.body.email,
         },
       });
-      if (!newUser) res.status(404).send("no se creo el usuario");
+      if (!newUser) res.status(400).send("no se creo el usuario");
       res.sendStatus(201);
     } catch (error) {
       res.status(500).json(error);
@@ -53,7 +48,7 @@ class AuthController {
     res.clearCookie("generatedToken").sendStatus(204);
   };
   static me = (req, res) => {
-    res.send(req.user);
+    res.status(200).send(req.user);
   };
 }
 
