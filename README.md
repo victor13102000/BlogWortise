@@ -29,9 +29,9 @@ RUTAS BACK-END
 
 AUTH
 
-/api/auth/register: 
+/api/auth/register
 -post: crea un usuario y devuelve sus datos.
-/api/auth/login:
+/api/auth/login
 -post: loguea a un usuario y setea la la cookies con el token.
 /api/auth/me:
 -get: toma la cookie del usuario en el middlerware validateAuth y setea la información del usuario en req.user, posteriormente devuelve la información del usuario.
