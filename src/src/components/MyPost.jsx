@@ -54,7 +54,8 @@ const MyPost = ({ info }) => {
               placeholder={"edit the article content"}
             />
             <br />
-            <Button onClick={() =>{ return editPost(name.value, content.value, post.id)} }>
+            <Button onClick={() =>{  editPost(name.value, content.value, post.id)
+            navigate("/")} }>
               save changes
             </Button>
           </form>

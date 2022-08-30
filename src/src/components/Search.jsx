@@ -18,14 +18,14 @@ const Search = () => {
   return (
     <Box>
       <aside className="search">
-<Link to="/userlist">  <Button style={{color:'red'}}> User list</Button>
+<Link to="/userlist">  <Button style={{color:'white'}}> User list</Button>
 </Link>
       
         <br/>
         <h3>Search for a user to see their post</h3>
         <form>
           <input type={"text"} {...searchInput} />
-          <Button onClick={handleSearch}>Search</Button>
+          <Button style={{color:'white'}} onClick={handleSearch}>Search</Button>
         </form>
         {userSearch &&
           userSearch.map((user, i) => {

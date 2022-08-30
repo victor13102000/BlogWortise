@@ -27,6 +27,7 @@ export default function Navbar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            style={{color:'white'}}
           >
             WortiseBlog
           </IconButton>
@@ -40,13 +41,13 @@ export default function Navbar() {
           
             <>
               {" "}
-              <Link to='/myprofile'><Button  color="inherit">
+              <Link to='/myprofile'><Button style={{color:'white'}}  color="inherit">
                  MY PROFILE
                 </Button>
               </Link>
               
               <Link to="/">
-                <Button onClick={handleClick} color="inherit">
+                <Button  style={{color:'white'}}onClick={handleClick} color="inherit">
                   Logout
                 </Button>
               </Link>
@@ -54,10 +55,10 @@ export default function Navbar() {
           ) : (
             <>
               <Link to="/login">
-                <Button color="inherit">Login</Button>
+                <Button style={{color:'white'}} color="inherit">Login</Button>
               </Link>
               <Link to="/register">
-                <Button color="inherit">Register</Button>
+                <Button style={{color:'white'}} color="inherit">Register</Button>
               </Link>
             </>
           )}
