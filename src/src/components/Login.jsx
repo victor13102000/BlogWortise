@@ -45,6 +45,7 @@ const handleSubmit =  async (e) => {
     e.preventDefault();
    await dispach(postLoginUser(userObj))
    navigate('/')
+   window.location.reload()
   };
 
 

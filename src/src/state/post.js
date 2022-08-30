@@ -8,6 +8,7 @@ export const allPost = createAsyncThunk("POSTS", () => {
     .catch((err) => console.log(err));
 });
 
+
 export const deletePost= async (id)=>{
   const res = await axios.delete(`/api/post/${id}`)
   return res

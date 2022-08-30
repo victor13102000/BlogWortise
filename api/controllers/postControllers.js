@@ -49,6 +49,16 @@ class postsController {
       res.status(500).send(error);
     }
   };
+  static getPostByUserId= async(req, res)=>{
+try {
+ const user= await User.findByPk(req.params.id, {include:{model:Post}})
+const posts= user.posts
+if(!posts) return res.sendStatus(404)
+res.status(200).send(posts)
+} catch (error) {
+  res.send(error)
+}
+  }
 }
 
 module.exports = postsController;

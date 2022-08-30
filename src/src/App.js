@@ -25,6 +25,7 @@ function App() {
         <Route path="/login" element={<SignIn />} />
         <Route path="/profile/:id" element={<Profile/>} />
         <Route path="/myprofile" element={<MyProfile/>} />
+        <Route path="/userlist" element={<></>}/>
       </Routes>
     </div>
   );

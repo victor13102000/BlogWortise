@@ -18,6 +18,10 @@ const Search = () => {
   return (
     <Box>
       <aside className="search">
+<Link to="/userlist">  <Button style={{color:'red'}}> User list</Button>
+</Link>
+      
+        <br/>
         <h3>Search for a user to see their post</h3>
         <form>
           <input type={"text"} {...searchInput} />

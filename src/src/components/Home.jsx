@@ -11,7 +11,7 @@ const Home = () => {
   const posts =  useSelector((state) => state.post);
   useEffect(() => {
     dispatch(allPost());
-  }, []);
+  }, [dispatch]);
   return (
     <>
       <Welcome />
