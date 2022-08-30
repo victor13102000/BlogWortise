@@ -1,4 +1,4 @@
-const { User, Post } = require("../models");
+const { User } = require("../models");
 const { generateToken } = require("../config/token");
 class AuthController {
   static userLogin = async (req, res) => {
