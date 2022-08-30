@@ -3,7 +3,6 @@ import { useState } from "react";
 import { editPost } from "../services/posts.services";
 import useInput from "../Hooks/useInputs";
 import { deletePost } from "../state/post";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 
 const MyPost = ({ info }) => {

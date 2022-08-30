@@ -30,9 +30,9 @@ const Search = () => {
         {userSearch &&
           userSearch.map((user, i) => {
             return (
-              <div key={i} color="black">
-                <Link to={`/profile/${user.id}`}>
-                  <h4>{`${user.name} ${user.lastname}`}</h4>
+              <div key={i} >
+                <Link style={{color:"white"}} to={`/profile/${user.id}`}>
+                  <Button style={{color:'white'}}>{`${user.name} ${user.lastname}`}</Button>
                 </Link>
                 <br></br>
               </div>
