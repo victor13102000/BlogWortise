@@ -9,6 +9,7 @@ import { getUser } from "./state/user";
 import { useDispatch } from "react-redux";
 import Profile from "./components/Profile";
 import MyProfile from "./components/MyProfile"
+import ListUser from "./components/ListUser";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ function App() {
         <Route path="/login" element={<SignIn />} />
         <Route path="/profile/:id" element={<Profile/>} />
         <Route path="/myprofile" element={<MyProfile/>} />
-        <Route path="/userlist" element={<></>}/>
+        <Route path="/userlist" element={<ListUser/>}/>
       </Routes>
     </div>
   );

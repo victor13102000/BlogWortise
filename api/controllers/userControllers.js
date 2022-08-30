@@ -45,6 +45,16 @@ class userController {
       res.status(500).send(error);
     }
   };
+ 
+  static getAllUser= async(req,res)=>{
+    try {
+      const users = await User.findAll();
+   if(!users)return res.status(404)
+   res.status(200).send(users)
+    } catch (error) {
+      res.sendStatus(500)
+    }
+  }
 }
 
 module.exports = userController;

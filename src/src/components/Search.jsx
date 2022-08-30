@@ -2,7 +2,7 @@ import "../styles/search.css";
 import useInput from "../Hooks/useInputs";
 import axios from "axios";
 import { useState } from "react";
-import { Button, Input } from "@mui/material";
+import { Button} from "@mui/material";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 const Search = () => {

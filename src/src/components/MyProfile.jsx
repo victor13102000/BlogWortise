@@ -10,9 +10,8 @@ import MyPost from "./MyPost";
 
 const MyProfile = () => {
   const navigate= useNavigate()
-  let user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   const [posts, setPosts] = useState([])
-  console.log(posts)
   const [bolean, setBolean] = useState(false);
   const content= useInput()
   const articleName= useInput()
