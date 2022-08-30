@@ -16,7 +16,7 @@ COMO CONFIGURAR EL PROYECTO:
 Configuración Back-end:
 -Una vez clonado el repositorio debes ejecutar el siguiente comando parado en la carpeta raiz del proyecto: npm install para poder instalar las dependencias del Back-end.
 -Antes de levantar el proyecto se debe crear la base de datos, por lo tanto se debe correr desde una consola el comando: createdb nombreDeSuBaseDeDatos 
--Posteriormente a crear la base de datos debe crear un archivo .env y completarlo en base al archivo .envExample para poder tener todas las variables de entorno y que la app funcione correctamente. 
+-Posteriormente a crear la base de datos debe crear un archivo .env y completarlo en base al archivo .envExample (importante que sea a la misma altura que .envExample) para poder tener todas las variables de entorno y que la app funcione correctamente. 
 IMPORTANTE: Si tienen linux como sistema operativo, y tienen configurado postgres para que no requiera un usuario ni contraña (null, null) NO deben ingresar a la carpta db/index.js sino que pueden levantar el Back-end, pero sino tienen esta configuracion deben ingresar a la carpeta db/index.js y utilizar las variables importadas de config/config.js.
 -Por ultimo para poder levantar el Back-end se debe correr el comando: npm run server posicionado en la carpeta raiz.
 
